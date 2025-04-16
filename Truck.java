@@ -46,4 +46,4 @@ public class Truck extends Vehicle {
                 ", price=" + price +
                 '}';
     }
-}    THUTO BETHUEL
+}   
