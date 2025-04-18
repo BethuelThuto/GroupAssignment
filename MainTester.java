@@ -22,5 +22,6 @@ public class MainTester {
             System.out.println("8.Pawn a truck");
             System.out.println("9.Exit");
         }
+         while(choice != 9);   
     }
 }
