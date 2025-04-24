@@ -8,9 +8,8 @@ public class MainTester {
         int choice;
 
         Scanner in = new Scanner(System.in);
-
-        System.out.println("Enter your choice(1-9)");
-        int choice = in.nextInt();
+        
+        int choice;
         do {
             System.out.println("1.Browse cars");
             System.out.println("2.Browse Trucks");
@@ -21,6 +20,11 @@ public class MainTester {
             System.out.println("7.Pawn a car");
             System.out.println("8.Pawn a truck");
             System.out.println("9.Exit");
+
+             System.out.println("Enter your choice(1-9)");
+             int choice = in.nextInt();
+
+            if (choice ==1) { MotorStore.broswerCars();}
         }
          while(choice != 9);   
     }
