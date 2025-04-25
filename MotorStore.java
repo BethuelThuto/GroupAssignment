@@ -82,4 +82,5 @@ public class MotorStore {
         electricCars.add(electricCar);
         System.out.println("You have pawned the electric car: " + electricCar.toString());
     }
+ 
 }
