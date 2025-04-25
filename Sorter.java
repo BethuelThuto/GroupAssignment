@@ -32,7 +32,7 @@ public static void insertionSortTrucks(Trucks[] trucks) {
     }
     trucks[j + 1] = key;
     }
-    public static int linearSearchTruck(Truck[] trucks, Truck target) {
+    public static int linearSearchTrucks(Truck[] trucks, Truck target) {
         for (int i = 0; i < trucks.length; i++) {
             if (trucks[i].equals(target)) {
                 return i; // Found
