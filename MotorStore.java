@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class MotorStore {
-    public ArrayListList<Truck> trucks;
-    public ArrayListList<Car> cars; 
+    public ArrayList<Trucks> trucks;
+    public ArrayList<Car> cars; 
     public ArrayList<ElectricCar> electricCars; 
 
     public MotorStore() {
@@ -44,7 +44,7 @@ public class MotorStore {
         }
     }
 
-    public void purchaseTruck(Truck truck) {
+    public void purchaseTruck(Trucks truck) {
         if (trucks.remove(truck)) {
             System.out.println("You have purchased the truck: " + truck.toString());
         } else {
@@ -68,7 +68,7 @@ public class MotorStore {
         }
     }
 
-    public void pawnTruck(Truck truck) {
+    public void pawnTruck(Trucks truck) {
         trucks.add(truck);
         System.out.println("You have pawned the truck: " + truck.toString());
     }

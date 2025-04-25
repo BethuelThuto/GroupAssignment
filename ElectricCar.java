@@ -1,9 +1,9 @@
 public class ElectricCar extends Car {
-    private Battery battery; 
+    protected Battery battery; 
 
-    public ElectricCar(int year, String make, String model, int mileage, double price, Battery battery) {
-        super(year, make, model, mileage, price);
-        this.battery = battery;
+    public ElectricCar(int year, String make, String model, int mileage, double price, String batteryBrand) throws InvalidPriceException  {
+        super(year, make, model, mileage, price); // Assuming super handles InvalidPriceException
+        this.battery = new Battery(batteryBrand);
     }
 
     public Battery getBattery() {
@@ -11,6 +11,9 @@ public class ElectricCar extends Car {
     }
 
     public void setBattery(Battery battery) {
+        if (battery == null) {
+            throw new IllegalArgumentException("Battery cannot be null");
+        }
         this.battery = battery;
     }
 
@@ -25,4 +28,6 @@ public class ElectricCar extends Car {
                 ", batteryBrand='" + battery.getBrand() + '\'' + // Displaying battery brand
                 '}';
     }
+
+
 }
