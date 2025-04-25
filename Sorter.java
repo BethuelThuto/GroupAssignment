@@ -20,3 +20,17 @@ public class Sorter {
         }
     }
 }
+
+public static void insertionSortTrucks(Trucks[] trucks) {
+    for (int i = 1; i < trucks.length; i++) {
+    Trucks key = trucks[i];
+    int j = i - 1;
+    // shift items greater than key
+    while (j >= 0 && arr[j].getPrice() > key.getPrice()) {
+    trucks[j + 1] = trucks[j];
+    j--;
+    }
+    trucks[j + 1] = key;
+    }
+    }
+   
