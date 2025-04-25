@@ -82,5 +82,20 @@ public class MotorStore {
         electricCars.add(electricCar);
         System.out.println("You have pawned the electric car: " + electricCar.toString());
     }
+       public static void selectionSortStudents(Car[] arr) {
+         for (int i = 0; i < arr.length - 1; i++) {
+           int minIndex = i;
+         for (int j = i + 1; j < arr.length; j++) {
+         // Compare prices
+         if (arr[j].getPrice() < arr[minIndex].getPrice()) {
+         minIndex = j;
+        }
+        }
+        // Swap
+         Car temp = arr[i];
+         arr[i] = arr[minIndex];
+         arr[minIndex] = temp;
+         }
+         }
  
 }
