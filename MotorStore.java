@@ -1,16 +1,19 @@
 import java.util.ArrayList;
 
 public class MotorStore {
+    // Lists for vehicles
     public ArrayList<Trucks> trucks;
-    public ArrayList<Car> cars; 
-    public ArrayList<ElectricCar> electricCars; 
+    public ArrayList<Car> cars;
+    public ArrayList<ElectricCar> electricCars;
 
+    // Constructor
     public MotorStore() {
         this.trucks = new ArrayList<>();
         this.cars = new ArrayList<>();
         this.electricCars = new ArrayList<>();
     }
 
+    // Show trucks
     public void browseTrucks() {
         System.out.println("Available Trucks:");
         if (trucks.isEmpty()) {
@@ -22,6 +25,7 @@ public class MotorStore {
         }
     }
 
+    // Show cars
     public void browseCars() {
         System.out.println("Available Cars:");
         if (cars.isEmpty()) {
@@ -33,6 +37,7 @@ public class MotorStore {
         }
     }
 
+    // Show electric cars
     public void browseElectricCars() {
         System.out.println("Available Electric Cars:");
         if (electricCars.isEmpty()) {
@@ -44,6 +49,7 @@ public class MotorStore {
         }
     }
 
+    // Buy truck
     public void purchaseTruck(Trucks truck) {
         if (trucks.remove(truck)) {
             System.out.println("You have purchased the truck: " + truck.toString());
@@ -52,6 +58,7 @@ public class MotorStore {
         }
     }
 
+    // Buy car
     public void purchaseCar(Car car) {
         if (cars.remove(car)) {
             System.out.println("You have purchased the car: " + car.toString());
@@ -60,6 +67,7 @@ public class MotorStore {
         }
     }
 
+    // Buy electric car
     public void purchaseElectricCar(ElectricCar electricCar) {
         if (electricCars.remove(electricCar)) {
             System.out.println("You have purchased the electric car: " + electricCar.toString());
@@ -68,34 +76,37 @@ public class MotorStore {
         }
     }
 
+    // Pawn truck
     public void pawnTruck(Trucks truck) {
         trucks.add(truck);
         System.out.println("You have pawned the truck: " + truck.toString());
     }
 
+    // Pawn car
     public void pawnCar(Car car) {
         cars.add(car);
         System.out.println("You have pawned the car: " + car.toString());
     }
 
+    // Pawn electric car
     public void pawnElectricCar(ElectricCar electricCar) {
         electricCars.add(electricCar);
         System.out.println("You have pawned the electric car: " + electricCar.toString());
     }
-       public static void sortCars(Car[] arr) {
-         for (int i = 0; i < arr.length - 1; i++) {
-           int minIndex = i;
-         for (int j = i + 1; j < arr.length; j++) {
-         // Compare prices
-         if (arr[j].getPrice() < arr[minIndex].getPrice()) {
-         minIndex = j;
+
+    // Sort array of cars by price (Selection sort)
+    public static void sortCars(Car[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j].getPrice() < arr[minIndex].getPrice()) {
+                    minIndex = j;
+                }
+            }
+            // Swap cars
+            Car temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
         }
-        }
-        // Swap
-         Car temp = arr[i];
-         arr[i] = arr[minIndex];
-         arr[minIndex] = temp;
-         }
-         }
- 
+    }
 }
