@@ -7,6 +7,9 @@ public class Car extends Vehicle {
         super(make, year);
         this.model = model;
         this.mileage = mileage;
+        if (price <= 0) {
+            throw new InvalidPriceException("Price cannot be negative.");
+        }
         this.price = price;
     }
 

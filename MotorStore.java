@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MotorStore {
     // Lists for vehicles
@@ -94,5 +95,15 @@ public class MotorStore {
         System.out.println("You have pawned the electric car: " + electricCar.toString());
     }
 
-    
+    public List<Trucks> getTrucks() {
+        return trucks;
+    }
+
+    public List<ElectricCar> getElectricCars() {
+        return electricCars;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         int choice;
 
@@ -73,7 +73,13 @@ public class Main {
                     int mileageCar = in.nextInt();
                     System.out.println("Enter car's price:");
                     double priceCar = in.nextDouble();
-                    motorStore.pawnCar(new Car(yearCar, makeCar, modelCar, mileageCar, priceCar));
+                    try {
+                        motorStore.pawnCar(new Car(yearCar, makeCar, modelCar, mileageCar, priceCar));
+                    } catch (InvalidPriceException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
+                    
+                    // motorStore.pawnCar(new Car(yearCar, makeCar, modelCar, mileageCar, priceCar));
                     System.out.println("Car successfully pawned!");
                     break;
                 case 8:
@@ -88,10 +94,15 @@ public class Main {
                     int mileageTruck = in.nextInt();
                     System.out.println("Enter truck's price:");
                     double priceTruck = in.nextDouble();
-                    motorStore.pawnTruck(new Trucks(yearTruck, makeTruck, modelTruck, mileageTruck, priceTruck));
+                    try {
+                        motorStore.pawnTruck(new Trucks(makeTruck, yearTruck, modelTruck, mileageTruck, priceTruck));
+                    } catch (InvalidPriceException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
+                    // motorStore.pawnTruck(new Trucks(makeTruck,yearTruck, modelTruck, mileageTruck, priceTruck));
                     System.out.println("Truck successfully pawned!");
                     break;
                 case 9:
                     System.out.println("Thank you for visiting");
                     break;
-                } } } }
+                } }while (choice !=9); }}

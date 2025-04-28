@@ -1,9 +1,14 @@
-public class ElectricCar extends Car {
-    protected Battery battery; 
+// import New folder.Battery;
 
-    public ElectricCar(int year, String make, String model, int mileage, double price, String batteryBrand) throws InvalidPriceException  {
-        super(year, make, model, mileage, price); // Assuming super handles InvalidPriceException
-        this.battery = new Battery(batteryBrand);
+public class ElectricCar extends Car {
+    private Battery battery; 
+
+    public ElectricCar(int year, String make, String model, int mileage, double price, Battery battery) throws InvalidPriceException{
+        super(year, make, model, mileage, price);
+        if (price < 0) {
+            throw new InvalidPriceException("Price cannot be negative.");
+        }
+        this.battery = battery;
     }
 
     public Battery getBattery() {
@@ -11,9 +16,6 @@ public class ElectricCar extends Car {
     }
 
     public void setBattery(Battery battery) {
-        if (battery == null) {
-            throw new IllegalArgumentException("Battery cannot be null");
-        }
         this.battery = battery;
     }
 
@@ -28,6 +30,4 @@ public class ElectricCar extends Car {
                 ", batteryBrand='" + battery.getBrand() + '\'' + // Displaying battery brand
                 '}';
     }
-
-
 }
