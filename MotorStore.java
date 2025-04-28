@@ -94,19 +94,5 @@ public class MotorStore {
         System.out.println("You have pawned the electric car: " + electricCar.toString());
     }
 
-    // Sort array of cars by price (Selection sort)
-    public static void sortCars(Car[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j].getPrice() < arr[minIndex].getPrice()) {
-                    minIndex = j;
-                }
-            }
-            // Swap cars
-            Car temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
-        }
-    }
+    
 }
